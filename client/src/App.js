@@ -58,6 +58,8 @@ class App extends Component {
       
       console.log(task);
       this.setState({tasks:[...this.state.tasks, task]});
+      
+      // console.log(this.state.tasks);
       }
   };
 getalltask(){
@@ -135,13 +137,13 @@ toggleCompleted(taskId){
                       <input
                       type="checkbox"
                       name={task.id}
-                      defaultChecked={task[3]}
+                      defaultChecked={task.completed}
                       ref={(input) => {
                         this.checkbox = input
                       }}
                       onClick={(event) => {
                         this.toggleCompleted(this.checkbox.name) }}/>
-                      <span className="title" >{task[0]} </span>
+                      <span className="title" >{task.title} </span>
                     </label>
 
                   </div>
